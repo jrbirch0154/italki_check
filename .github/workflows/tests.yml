@@ -3,12 +3,12 @@ name: Tests
 on:
   push:
     paths:
-      - "check_italki.py"
+      - "check_italki_api.py"
       - "test_checker.py"
       - "requirements.txt"
   pull_request:
     paths:
-      - "check_italki.py"
+      - "check_italki_api.py"
       - "test_checker.py"
       - "requirements.txt"
   workflow_dispatch:        # adds a "Run workflow" button in the Actions tab
