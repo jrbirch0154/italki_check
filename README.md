@@ -19,7 +19,7 @@ Note that iTalki's article says languages *not* listed in the table are open, so
 
 ```
 .
-├── check_italki.py            # the checker script
+├── check_italki_api.py            # the checker script
 ├── test_checker.py            # pytest tests for the API response
 ├── requirements.txt
 ├── .env                       # your Discord webhook (not committed)
@@ -49,7 +49,7 @@ Make sure `.env` is listed in your `.gitignore`. Anyone with the webhook URL can
 ## Usage
 
 ```bash
-python check_italki.py
+python check_italki_api.py
 ```
 
 It prints the current statuses and sends a Discord message only if the language is open. To check a different language, change `LANGUAGE` at the top of the script to match the name in iTalki's table exactly (for example `"Polish"` or `"Persian (Farsi)"`).
@@ -75,7 +75,7 @@ pytest test_checker.py -v
 
 ## GitHub Actions
 
-The workflow in `.github/workflows/tests.yml` runs the tests automatically whenever you push a change to `check_italki.py`, `test_checker.py`, or `requirements.txt`, and on pull requests that touch those files. Edits to other files, like this README, don't trigger it. You can also run it by hand from the **Actions** tab → **Tests** → **Run workflow**.
+The workflow in `.github/workflows/tests.yml` runs the tests automatically whenever you push a change to `check_italki_api.py`, `test_checker.py`, or `requirements.txt`, and on pull requests that touch those files. Edits to other files, like this README, don't trigger it. You can also run it by hand from the **Actions** tab → **Tests** → **Run workflow**.
 
 To set it up, commit the `.github/workflows/tests.yml` file and push. GitHub picks it up automatically, and results appear under the repo's **Actions** tab, with a green check or red X next to each commit.
 
